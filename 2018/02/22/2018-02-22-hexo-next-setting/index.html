@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="2_gvJ0AU4BQMbo71lVLx7ZFue1PuEupJjYtJtYYvWfI">
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="NGZiuIq8y3">
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1. 搜索功能1.1. 在Hexo根目录下执行 npm install hexo-generator-searchdb –save1.2. blog下的_config.yml文件编辑12345search:  path: search.xml  field: post  format: html  limit: 10000 1.3. /blog/themes/next下的_config.yml文件">
+<meta name="keywords" content="博客,Next">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo-Next主题配置">
+<meta property="og:url" content="https://www.shado.com.cn/2018/02/22/2018-02-22-hexo-next-setting/index.html">
+<meta property="og:site_name" content="Shado&#39;s Blog">
+<meta property="og:description" content="1. 搜索功能1.1. 在Hexo根目录下执行 npm install hexo-generator-searchdb –save1.2. blog下的_config.yml文件编辑12345search:  path: search.xml  field: post  format: html  limit: 10000 1.3. /blog/themes/next下的_config.yml文件">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-18T08:22:03.642Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo-Next主题配置">
+<meta name="twitter:description" content="1. 搜索功能1.1. 在Hexo根目录下执行 npm install hexo-generator-searchdb –save1.2. blog下的_config.yml文件编辑12345search:  path: search.xml  field: post  format: html  limit: 10000 1.3. /blog/themes/next下的_config.yml文件">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Shado's Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://www.shado.com.cn/2018/02/22/2018-02-22-hexo-next-setting/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Hexo-Next主题配置 | Shado's Blog</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2e95519f99e1c36388001fcde9a63479";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Shado's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.shado.com.cn/2018/02/22/2018-02-22-hexo-next-setting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shado Fung">
+      <meta itemprop="description" content="Java Developer">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shado's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo-Next主题配置
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-22 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-22T00:00:00+08:00">2018-02-22</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-18 16:22:03" itemprop="dateModified" datetime="2019-06-18T16:22:03+08:00">2019-06-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/博客/" itemprop="url" rel="index"><span itemprop="name">博客</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-搜索功能"><a href="#1-搜索功能" class="headerlink" title="1. 搜索功能"></a>1. 搜索功能</h2><h3 id="1-1-在Hexo根目录下执行-npm-install-hexo-generator-searchdb-–save"><a href="#1-1-在Hexo根目录下执行-npm-install-hexo-generator-searchdb-–save" class="headerlink" title="1.1. 在Hexo根目录下执行 npm install hexo-generator-searchdb –save"></a>1.1. 在Hexo根目录下执行 npm install hexo-generator-searchdb –save</h3><h3 id="1-2-blog下的-config-yml文件编辑"><a href="#1-2-blog下的-config-yml文件编辑" class="headerlink" title="1.2. blog下的_config.yml文件编辑"></a>1.2. blog下的_config.yml文件编辑</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">  path:</span> search.xml</span><br><span class="line"><span class="symbol">  field:</span> post</span><br><span class="line"><span class="symbol">  format:</span> html</span><br><span class="line"><span class="symbol">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-3-blog-themes-next下的-config-yml文件编辑"><a href="#1-3-blog-themes-next下的-config-yml文件编辑" class="headerlink" title="1.3. /blog/themes/next下的_config.yml文件编辑"></a>1.3. /blog/themes/next下的_config.yml文件编辑</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-RSS订阅"><a href="#2-RSS订阅" class="headerlink" title="2. RSS订阅"></a>2. RSS订阅</h2><h3 id="2-1-在Hexo根目录下执行-npm-install-hexo-generator-feed-–save"><a href="#2-1-在Hexo根目录下执行-npm-install-hexo-generator-feed-–save" class="headerlink" title="2.1. 在Hexo根目录下执行 npm install hexo-generator-feed –save"></a>2.1. 在Hexo根目录下执行 npm install hexo-generator-feed –save</h3><h3 id="2-2-blog下的-config-yml文件编辑"><a href="#2-2-blog下的-config-yml文件编辑" class="headerlink" title="2.2. blog下的_config.yml文件编辑"></a>2.2. blog下的_config.yml文件编辑</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># RSS订阅</span></span><br><span class="line"><span class="symbol">plugin:</span></span><br><span class="line">- hexo-generator-feed</span><br><span class="line"></span><br><span class="line"><span class="meta"># RSS</span></span><br><span class="line"><span class="symbol">feed:</span></span><br><span class="line"><span class="symbol">  type:</span> atom</span><br><span class="line"><span class="symbol">  path:</span> atom.xml</span><br><span class="line"><span class="symbol">  limit:</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-3-blog-themes-next下的-config-yml文件编辑"><a href="#2-3-blog-themes-next下的-config-yml文件编辑" class="headerlink" title="2.3. /blog/themes/next下的_config.yml文件编辑"></a>2.3. /blog/themes/next下的_config.yml文件编辑</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">rss:</span> /atom.xml</span><br></pre></td></tr></table></figure>
+<h2 id="发布到Github"><a href="#发布到Github" class="headerlink" title="发布到Github"></a>发布到Github</h2><h3 id="在Hexo根目录下执行-npm-install-–save-hexo-deployer-git"><a href="#在Hexo根目录下执行-npm-install-–save-hexo-deployer-git" class="headerlink" title="在Hexo根目录下执行 npm install –save hexo-deployer-git"></a>在Hexo根目录下执行 npm install –save hexo-deployer-git</h3><h3 id="自动关联域名-创建-Hexo根目录-source-CNAME-内容为域名，如：www-mingdong-online"><a href="#自动关联域名-创建-Hexo根目录-source-CNAME-内容为域名，如：www-mingdong-online" class="headerlink" title="自动关联域名 创建../Hexo根目录/source/CNAME 内容为域名，如：www.mingdong.online"></a>自动关联域名 创建../Hexo根目录/source/CNAME 内容为域名，如：<code>www.mingdong.online</code></h3><h3 id="hexo-d"><a href="#hexo-d" class="headerlink" title="hexo d"></a>hexo d</h3><h2 id="文章字数统计和阅读时间统计"><a href="#文章字数统计和阅读时间统计" class="headerlink" title="文章字数统计和阅读时间统计"></a>文章字数统计和阅读时间统计</h2><h3 id="https-github-com-theme-next-hexo-symbols-count-time"><a href="#https-github-com-theme-next-hexo-symbols-count-time" class="headerlink" title="https://github.com/theme-next/hexo-symbols-count-time"></a><a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">https://github.com/theme-next/hexo-symbols-count-time</a></h3><h3 id="在Hexo根目录下执行-npm-install-hexo-symbols-count-time-–save"><a href="#在Hexo根目录下执行-npm-install-hexo-symbols-count-time-–save" class="headerlink" title="在Hexo根目录下执行 npm install hexo-symbols-count-time –save"></a>在Hexo根目录下执行 npm install hexo-symbols-count-time –save</h3><h3 id="blog下的-config-yml文件编辑"><a href="#blog下的-config-yml文件编辑" class="headerlink" title="blog下的_config.yml文件编辑"></a>blog下的_config.yml文件编辑</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line"><span class="attr">  symbols:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  time:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  total_symbols:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  total_time:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="博客中插入图片"><a href="#博客中插入图片" class="headerlink" title="博客中插入图片"></a>博客中插入图片</h2><h3 id="在Hexo根目录下执行-npm-install-hexo-asset-image-–save"><a href="#在Hexo根目录下执行-npm-install-hexo-asset-image-–save" class="headerlink" title="在Hexo根目录下执行 npm install hexo-asset-image –save"></a>在Hexo根目录下执行 npm install hexo-asset-image –save</h3><h3 id="blog下的-config-yml文件编辑-1"><a href="#blog下的-config-yml文件编辑-1" class="headerlink" title="blog下的_config.yml文件编辑"></a>blog下的_config.yml文件编辑</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="live2d"><a href="#live2d" class="headerlink" title="live2d"></a>live2d</h2><h3 id="https-github-com-EYHN-hexo-helper-live2d-blob-master-README-md"><a href="#https-github-com-EYHN-hexo-helper-live2d-blob-master-README-md" class="headerlink" title="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.md"></a><a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.md" target="_blank" rel="noopener">https://github.com/EYHN/hexo-helper-live2d/blob/master/README.md</a></h3><h3 id="安装live2d-在Hexo根目录下执行-npm-install-–save-hexo-helper-live2d"><a href="#安装live2d-在Hexo根目录下执行-npm-install-–save-hexo-helper-live2d" class="headerlink" title="安装live2d 在Hexo根目录下执行 npm install –save hexo-helper-live2d"></a>安装live2d 在Hexo根目录下执行 npm install –save hexo-helper-live2d</h3><h3 id="安装模块包-在Hexo根目录下执行-npm-install-packagename-如-npm-install-live2d-widget-model-wanko"><a href="#安装模块包-在Hexo根目录下执行-npm-install-packagename-如-npm-install-live2d-widget-model-wanko" class="headerlink" title="安装模块包 在Hexo根目录下执行 npm install {packagename} 如:npm install live2d-widget-model-wanko"></a>安装模块包 在Hexo根目录下执行 npm install {packagename} 如:npm install live2d-widget-model-wanko</h3><h3 id="blog下的-config-yml文件编辑-2"><a href="#blog下的-config-yml文件编辑-2" class="headerlink" title="blog下的_config.yml文件编辑"></a>blog下的_config.yml文件编辑</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Live2D</span></span><br><span class="line"><span class="comment">## https://github.com/EYHN/hexo-helper-live2d</span></span><br><span class="line"><span class="attr">live2d:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># enable: false</span></span><br><span class="line"><span class="attr">  scriptFrom:</span> <span class="string">local</span> <span class="comment"># 默认</span></span><br><span class="line"><span class="attr">  pluginRootPath:</span> <span class="string">live2dw/</span> <span class="comment"># 插件在站点上的根目录(相对路径)</span></span><br><span class="line"><span class="attr">  pluginJsPath:</span> <span class="string">lib/</span> <span class="comment"># 脚本文件相对与插件根目录路径</span></span><br><span class="line"><span class="attr">  pluginModelPath:</span> <span class="string">assets/</span> <span class="comment"># 模型文件相对与插件根目录路径</span></span><br><span class="line">  <span class="comment"># scriptFrom: jsdelivr # jsdelivr CDN</span></span><br><span class="line">  <span class="comment"># scriptFrom: unpkg # unpkg CDN</span></span><br><span class="line">  <span class="comment"># scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url</span></span><br><span class="line"><span class="attr">  tagMode:</span> <span class="literal">false</span> <span class="comment"># 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中</span></span><br><span class="line"><span class="attr">  debug:</span> <span class="literal">false</span> <span class="comment"># 调试, 是否在控制台输出日志</span></span><br><span class="line"><span class="attr">  model:</span></span><br><span class="line"><span class="attr">    use:</span> <span class="string">live2d-widget-model-wanko</span> <span class="comment"># npm-module package name</span></span><br><span class="line">    <span class="comment"># use: wanko # 博客根目录/live2d_models/ 下的目录名</span></span><br><span class="line">    <span class="comment"># use: ./wives/wanko # 相对于博客根目录的路径</span></span><br><span class="line">    <span class="comment"># use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url</span></span><br></pre></td></tr></table></figure>
+<h2 id="aplayer"><a href="#aplayer" class="headerlink" title="aplayer"></a>aplayer</h2><h3 id="https-github-com-MoePlayer-hexo-tag-aplayer"><a href="#https-github-com-MoePlayer-hexo-tag-aplayer" class="headerlink" title="https://github.com/MoePlayer/hexo-tag-aplayer"></a><a href="https://github.com/MoePlayer/hexo-tag-aplayer" target="_blank" rel="noopener">https://github.com/MoePlayer/hexo-tag-aplayer</a></h3><h3 id="在Hexo根目录下执行-npm-install-–save-hexo-tag-aplayer"><a href="#在Hexo根目录下执行-npm-install-–save-hexo-tag-aplayer" class="headerlink" title="在Hexo根目录下执行 npm install –save hexo-tag-aplayer"></a>在Hexo根目录下执行 npm install –save hexo-tag-aplayer</h3><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id><a href="#" class="headerlink" title></a>
+			<script>
+				console.error("Error: [hexo-tag-aplayer] Specified asset file not found ([picture_url,)");
+			</script></h4><ul>
+<li>title : 曲目标题</li>
+<li>author: 曲目作者</li>
+<li>url: 音乐文件 URL 地址</li>
+<li>picture_url: (可选) 音乐对应的图片地址</li>
+<li>narrow: （可选）播放器袖珍风格</li>
+<li>autoplay: (可选) 自动播放，移动端浏览器暂时不支持此功能</li>
+<li>width:xxx: (可选) 播放器宽度 (默认: 100%)</li>
+<li>lrc:xxx: （可选）歌词文件 URL 地址<br>当开启 Hexo 的 文章资源文件夹<code>post_asset_folder: true</code> 功能时，可以将图片、音乐文件、歌词文件放入与文章对应的资源文件夹中，然后直接引用：</li>
+</ul>
+<p><code>
+			<script>
+				console.error("Error: [hexo-tag-aplayer] Specified asset file not found (picture.jpg)");
+			</script></code></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/博客/" rel="tag"># 博客</a>
+          
+            <a href="/tags/Next/" rel="tag"># Next</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/22/2017-10-22-mysql-plus/" rel="next" title="MySQL加强">
+                <i class="fa fa-chevron-left"></i> MySQL加强
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/17/2018-03-17-java-virtual-machine/" rel="prev" title="JVM">
+                JVM <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="Shado Fung">
+            
+              <p class="site-author-name" itemprop="name">Shado Fung</p>
+              <p class="site-description motion-element" itemprop="description">Java Developer</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/ShadoFung" title="GitHub &rarr; https://github.com/ShadoFung" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:ShadoFung@gmail.com" title="E-Mail &rarr; mailto:ShadoFung@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/u/3247997722" title="Weibo &rarr; https://weibo.com/u/3247997722" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://stackoverflow.com/users/10678850/shado-fung" title="StackOverflow &rarr; https://stackoverflow.com/users/10678850/shado-fung" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://docs.oracle.com/javase/tutorial/" title="https://docs.oracle.com/javase/tutorial/" rel="noopener" target="_blank">Oracle Java Tutorial</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://spring.io/guides" title="https://spring.io/guides" rel="noopener" target="_blank">Spring Guides</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-搜索功能"><span class="nav-number">1.</span> <span class="nav-text">1. 搜索功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-在Hexo根目录下执行-npm-install-hexo-generator-searchdb-–save"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 在Hexo根目录下执行 npm install hexo-generator-searchdb –save</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-blog下的-config-yml文件编辑"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. blog下的_config.yml文件编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-blog-themes-next下的-config-yml文件编辑"><span class="nav-number">1.3.</span> <span class="nav-text">1.3. /blog/themes/next下的_config.yml文件编辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-RSS订阅"><span class="nav-number">2.</span> <span class="nav-text">2. RSS订阅</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-在Hexo根目录下执行-npm-install-hexo-generator-feed-–save"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 在Hexo根目录下执行 npm install hexo-generator-feed –save</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-blog下的-config-yml文件编辑"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. blog下的_config.yml文件编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-blog-themes-next下的-config-yml文件编辑"><span class="nav-number">2.3.</span> <span class="nav-text">2.3. /blog/themes/next下的_config.yml文件编辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布到Github"><span class="nav-number">3.</span> <span class="nav-text">发布到Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在Hexo根目录下执行-npm-install-–save-hexo-deployer-git"><span class="nav-number">3.1.</span> <span class="nav-text">在Hexo根目录下执行 npm install –save hexo-deployer-git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动关联域名-创建-Hexo根目录-source-CNAME-内容为域名，如：www-mingdong-online"><span class="nav-number">3.2.</span> <span class="nav-text">自动关联域名 创建../Hexo根目录/source/CNAME 内容为域名，如：www.mingdong.online</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-d"><span class="nav-number">3.3.</span> <span class="nav-text">hexo d</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章字数统计和阅读时间统计"><span class="nav-number">4.</span> <span class="nav-text">文章字数统计和阅读时间统计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#https-github-com-theme-next-hexo-symbols-count-time"><span class="nav-number">4.1.</span> <span class="nav-text">https://github.com/theme-next/hexo-symbols-count-time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Hexo根目录下执行-npm-install-hexo-symbols-count-time-–save"><span class="nav-number">4.2.</span> <span class="nav-text">在Hexo根目录下执行 npm install hexo-symbols-count-time –save</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#blog下的-config-yml文件编辑"><span class="nav-number">4.3.</span> <span class="nav-text">blog下的_config.yml文件编辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博客中插入图片"><span class="nav-number">5.</span> <span class="nav-text">博客中插入图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在Hexo根目录下执行-npm-install-hexo-asset-image-–save"><span class="nav-number">5.1.</span> <span class="nav-text">在Hexo根目录下执行 npm install hexo-asset-image –save</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#blog下的-config-yml文件编辑-1"><span class="nav-number">5.2.</span> <span class="nav-text">blog下的_config.yml文件编辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#live2d"><span class="nav-number">6.</span> <span class="nav-text">live2d</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#https-github-com-EYHN-hexo-helper-live2d-blob-master-README-md"><span class="nav-number">6.1.</span> <span class="nav-text">https://github.com/EYHN/hexo-helper-live2d/blob/master/README.md</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装live2d-在Hexo根目录下执行-npm-install-–save-hexo-helper-live2d"><span class="nav-number">6.2.</span> <span class="nav-text">安装live2d 在Hexo根目录下执行 npm install –save hexo-helper-live2d</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装模块包-在Hexo根目录下执行-npm-install-packagename-如-npm-install-live2d-widget-model-wanko"><span class="nav-number">6.3.</span> <span class="nav-text">安装模块包 在Hexo根目录下执行 npm install {packagename} 如:npm install live2d-widget-model-wanko</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#blog下的-config-yml文件编辑-2"><span class="nav-number">6.4.</span> <span class="nav-text">blog下的_config.yml文件编辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aplayer"><span class="nav-number">7.</span> <span class="nav-text">aplayer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#https-github-com-MoePlayer-hexo-tag-aplayer"><span class="nav-number">7.1.</span> <span class="nav-text">https://github.com/MoePlayer/hexo-tag-aplayer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Hexo根目录下执行-npm-install-–save-hexo-tag-aplayer"><span class="nav-number">7.2.</span> <span class="nav-text">在Hexo根目录下执行 npm install –save hexo-tag-aplayer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">7.3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">7.3.1.</span> <span class="nav-text">
+			
+				console.error(&quot;Error: [hexo-tag-aplayer] Specified asset file not found ([picture_url,)&quot;);
+			</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shado Fung</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">239k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:38</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+  <script>
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66183427";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'; 
+      }
+      else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":true,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
+</html>
